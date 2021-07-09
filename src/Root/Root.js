@@ -1,5 +1,6 @@
 import React from "react";
 import "./index.css";
+import Input from '../Input/Input';
 import Select from "../Select/Select";
 import Button from '../Button/Button';
 import CurrencyExchange from "../ExchangeCurrency/CurrencyExchange";
@@ -43,12 +44,14 @@ class Root extends React.Component {
 
     return (
       <div>
-        <input
+
+        <Input 
           type="number"
           name="amount"
           autoComplete="off"
           onChange={this.handleChange}
         />
+
 
         <Select
           onChange={this.handleFirstSelect}
