@@ -1,13 +1,13 @@
 .wrapper{
     // background-color: #0097e6;
-    color: #0097e6;
+    color: #c23616;
 	text-transform: uppercase;
 	text-decoration: none;
 	background: #ffffff;
 	border-radius: 5px;
 	padding: 10px;
     font-weight: 700;
-	border: 3px solid #0097e6;
+	border: 3px solid #c23616;
 	cursor: pointer;
 	display: inline-block;
 	transition: all 0.4s ease 0s;
@@ -15,7 +15,7 @@
 }
 .wrapper:hover{
     color: #ffffff;
-	background: #0097e6;
-	border-color: #0097e6;
+	background: #c23616;
+	border-color: #c23616;
 	transition: all 0.4s ease 0s;
 }

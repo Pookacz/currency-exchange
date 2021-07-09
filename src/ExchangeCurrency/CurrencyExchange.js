@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import styles from './ExchangeCurrency.module.scss'
 
 const CurrencyExchange = ({ amount, firstCurrency, secondCurrency }) => {
   const [currencyExchange, setCurrencyExchange] = useState("");
@@ -24,7 +25,7 @@ const CurrencyExchange = ({ amount, firstCurrency, secondCurrency }) => {
 
   return(
     <div>
-      <p>{amount * currencyExchange}</p>
+      <span className={styles.wrapper}>{`${(amount * currencyExchange).toFixed(2)} ${secondCurrency}`}</span>
     </div>
   )
 };
