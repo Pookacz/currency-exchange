@@ -1,5 +1,6 @@
 import React from "react";
 import "./index.css";
+import Select from '../Select/Select';
 import CurrencyExchange from "../ExchangeCurrency/CurrencyExchange";
 
 class Root extends React.Component {
@@ -8,6 +9,7 @@ class Root extends React.Component {
     amount: 0,
     firstCurrency: "",
     secondCurrency: "",
+    currencyList: ['USD', 'EUR',' GBP', 'PLN', 'CHF']
   };
 
   changeCurrency = () => {
@@ -41,34 +43,17 @@ class Root extends React.Component {
 
     return (
       <div>
+          
         <input
           type="number"
           name="amount"
           autoComplete="off"
           onChange={this.handleChange}
         />
-
-        <select onChange={this.handleFirstSelect} defaultValue={"Select"}>
-          <option value="Select" disabled hidden>
-            Select
-          </option>
-          <option value="USD">USD</option>
-          <option value="EUR">EUR</option>
-          <option value="GBP">GBP</option>
-          <option value="PLN">PLN</option>
-          <option value="CHF">CHF</option>
-        </select>
-
-        <select onChange={this.handleSecondSelect} defaultValue={"Select"}>
-          <option value="Select" disabled hidden>
-            Select
-          </option>
-          <option value="USD">USD</option>
-          <option value="EUR">EUR</option>
-          <option value="GBP">GBP</option>
-          <option value="PLN">PLN</option>
-          <option value="CHF">CHF</option>
-        </select>
+        
+        <Select onChange={this.handleFirstSelect} currencyList={this.state.currencyList}/>
+        <Select onChange={this.handleSecondSelect} currencyList={this.state.currencyList}/>
+        
         <button onClick={this.changeCurrency}>Exchange.</button>
         {change && (
           <CurrencyExchange
