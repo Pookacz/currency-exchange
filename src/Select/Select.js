@@ -7,7 +7,7 @@ const Select = ({ currencyList, ...props }) => {
         Select
       </option>
       {currencyList.map((item) => (
-        <option>{item}</option>
+        <option key={item}>{item}</option>
       ))}
     </select>
   );

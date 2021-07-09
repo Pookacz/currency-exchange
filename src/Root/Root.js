@@ -1,6 +1,7 @@
 import React from "react";
 import "./index.css";
-import Select from '../Select/Select';
+import Select from "../Select/Select";
+import Button from '../Button/Button';
 import CurrencyExchange from "../ExchangeCurrency/CurrencyExchange";
 
 class Root extends React.Component {
@@ -9,7 +10,7 @@ class Root extends React.Component {
     amount: 0,
     firstCurrency: "",
     secondCurrency: "",
-    currencyList: ['USD', 'EUR',' GBP', 'PLN', 'CHF']
+    currencyList: ["USD", "EUR", " GBP", "PLN", "CHF"],
   };
 
   changeCurrency = () => {
@@ -23,7 +24,6 @@ class Root extends React.Component {
       change: false, //this prevents to abuse HTTP requests
       [e.target.name]: e.target.value,
     });
-    console.log(e.target.value);
   };
 
   handleFirstSelect = (e) => {
@@ -43,18 +43,22 @@ class Root extends React.Component {
 
     return (
       <div>
-          
         <input
           type="number"
           name="amount"
           autoComplete="off"
           onChange={this.handleChange}
         />
-        
-        <Select onChange={this.handleFirstSelect} currencyList={this.state.currencyList}/>
-        <Select onChange={this.handleSecondSelect} currencyList={this.state.currencyList}/>
-        
-        <button onClick={this.changeCurrency}>Exchange.</button>
+
+        <Select
+          onChange={this.handleFirstSelect}
+          currencyList={this.state.currencyList}
+        />
+        <Select
+          onChange={this.handleSecondSelect}
+          currencyList={this.state.currencyList}
+        />
+        <Button title='Exchange' onClick={this.changeCurrency}/>
         {change && (
           <CurrencyExchange
             amount={this.state.amount}
