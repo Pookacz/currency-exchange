@@ -1,9 +1,11 @@
 import React from 'react';
+import styles from './Button.module.scss'
+
 
 const Button = ({title, ...props}) => {
 
     return(
-        <button {...props}>
+        <button className={styles.wrapper} {...props}>
             {title}
         </button>
     )
