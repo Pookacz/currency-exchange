@@ -1,0 +1,21 @@
+.wrapper{
+    // background-color: #0097e6;
+    color: #0097e6;
+	text-transform: uppercase;
+	text-decoration: none;
+	background: #ffffff;
+	border-radius: 5px;
+	padding: 10px;
+    font-weight: 700;
+	border: 3px solid #0097e6;
+	cursor: pointer;
+	display: inline-block;
+	transition: all 0.4s ease 0s;
+	margin: 5px;
+}
+.wrapper:hover{
+    color: #ffffff;
+	background: #0097e6;
+	border-color: #0097e6;
+	transition: all 0.4s ease 0s;
+}
