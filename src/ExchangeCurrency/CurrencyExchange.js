@@ -18,7 +18,7 @@ const CurrencyExchange = ({ amount, firstCurrency, secondCurrency }) => {
   useEffect(() => {
     console.log(axios.request(options))
     axios.request(options).then((res) => {
-      setCurrencyExchange(res.data.[`${firstCurrency}_${secondCurrency}`]);
+      setCurrencyExchange(res.data[`${firstCurrency}_${secondCurrency}`]);
     });
   });
 
